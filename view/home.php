@@ -28,7 +28,7 @@
         <hr width="50%" color="white" />
         <footer>
             <p>Copyright(c) Louis Richard <a href="https://richard486.ch">@Richard486</a> - 2024</p>
-            <p>Sources for this website are privates. Please abbide by the BSD-3 License</p>
+            <p>Sources for this website are on <a href="https://github.com/LouisRichard/blog">GitHub</a>. Please abbide by the License</p>
         </footer>
     </body>
 </html>
