@@ -16,7 +16,29 @@
   * @return array X amount of blog posts titles and URL 
   */
  function getLatest($amount=20){
-    $query = "SELECT title, id, date FROM posts LIMIT ".$amount;
+    $query = "SELECT title, id, date FROM posts ORDER BY date DESC LIMIT ".$amount;
     require_once "model/dbconnector.php";
     return executeQuerySelect($query);
+ }
+
+/**
+ * Gets the content of the MD file from the post ID
+ * @param int $postID
+ * @return string content of the MD file
+ */
+ function getPostContent($postID){
+   $fp = getPostFilepath($postID);
+   return file_get_contents($fp[0][0], true);
+ }
+
+
+ /**
+  * Returns the path to the MD file for a given post ID
+  * @param int postID
+  * @return string path to the MD file stored in the database
+  */
+ function getPostFilepath($postID){
+   $query = "SELECT mdfile FROM posts WHERE id = ".$postID;
+   require_once "model/dbconnector.php";
+   return executeQuerySelect($query);
  }

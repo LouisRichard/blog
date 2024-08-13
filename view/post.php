@@ -5,24 +5,14 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css">
-        <title>Louis' Blog</title>
+        <title>Blog Post</title>
     </head>
-
     <body>
         <div class="container">
-            <h1>My rants and ongoing projects</h1>
-            <h6>I'm just very angry I guess</h6>
-            <br/>
-            <table class="table table-dark">
-                <th> Title </th>
-                <th> Date published </th>
-            <?php foreach($latest as $post){ ?>
-                <tr>
-                    <td><a href="index.php?page=post&id=<?=$post[1]?>"><?=$post[0]?></a></td>
-                    <td><?=$post[2]?></td>
-                </tr>
-            <?php } ?>
-            </table>
+            <?php echo $postContentHtml; ?>
+        
+            <br/><br/>
+            <p><b><a href="index.php">Back to home page</a></b></p>
         </div>
         <hr width="50%" color="white" />
         <footer>

@@ -8,6 +8,8 @@
  * Source       :   https://github.com/blog
  */
 
+include 'vendor/Parsedown.php';
+
 /**
  * Loads the home page view
  */
@@ -16,8 +18,25 @@ function home(){
     require "view/home.php";
 }
 
-
-function getLastBlogs(){
+/**
+ * Get the latest blog posts' titles, ID and date of publication
+ * @param int amount of posts (default : 20)
+ * @return array Title, Article ID and Date of puiblication
+ */
+function getLastBlogs($amount = 20){
     require_once "model/blogManager.php";
-    return getLatest();
+    return getLatest($amount);
+}
+
+/**
+ * Returns the content of a single post
+ * @param int post ID
+ * @return string content of the MD file
+ */
+function getPost($postID){
+    require_once "model/blogManager.php";
+    $postContent = getPostContent($postID);
+    $Parsedown = new Parsedown();
+    $postContentHtml = $Parsedown->text($postContent);
+    require "view/post.php";
 }

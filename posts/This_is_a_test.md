@@ -27,3 +27,6 @@ Or just regular text
 
 jumps *over* **the lazy dog**
 
+
+
+![](https://richard486.ch/assets/img/portfolio/hardware/mbp/mbp3.jpg)

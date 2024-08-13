@@ -10,7 +10,6 @@
  */
 
  require "controler/controler.php";
- session_start();
 
  if(!isset($_GET['page'])){
     home();
@@ -22,6 +21,15 @@
    switch($page){
    case 'home' :
       home();
+      break;
+   case 'post' :
+      if(!isset($_GET['id'])){
+         home();
+      }
+      else {
+         $post = $_GET['id'];
+         getPost($post);
+      }
       break;
    default :
       home();
