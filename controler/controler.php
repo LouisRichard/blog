@@ -34,9 +34,14 @@ function getLastBlogs($amount = 20){
  * @return string content of the MD file
  */
 function getPost($postID){
-    require_once "model/blogManager.php";
-    $postContent = getPostContent($postID);
-    $Parsedown = new Parsedown();
-    $postContentHtml = $Parsedown->text($postContent);
-    require "view/post.php";
+    if(is_numeric($postID)){
+        require_once "model/blogManager.php";
+        $postContent = getPostContent($postID);
+        $Parsedown = new Parsedown();
+        $postContentHtml = $Parsedown->text($postContent);
+        require "view/post.php";
+    } else {
+        home();
+    }
+
 }

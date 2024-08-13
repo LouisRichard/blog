@@ -28,7 +28,10 @@
  */
  function getPostContent($postID){
    $fp = getPostFilepath($postID);
-   return file_get_contents($fp[0][0], true);
+   if(file_exists("posts/".$fp[0][0])){
+      return file_get_contents("posts/".$fp[0][0], true);
+   } 
+   return "Error : Invalid Post ID";
  }
 
 

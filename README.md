@@ -23,12 +23,10 @@ I will just write it in Markdown, drop it in the post directory and manually add
 
 the query looks something like this :  
 ```sql
-INSERT INTO blog.posts (title, mdfile, date) VALUES ('Title of the article', 'posts/file_name_here.md', NOW());
+INSERT INTO blog.posts (title, mdfile, date) VALUES ('Title of the article', 'file_name_here.md', NOW());
 ```
-You'll notice that you have to specify the `posts` directory everytime in the database. Something I didn't think about. oops.  
-Easy enough to fix if you care.
 
 ## Security notice
 I've done jack to make sure everything is secure.  
 The website as it is now is very vulnerable to SQL injection because I didn't bother making checks while I'm still building it!  
-It is not safe for a production environement
+It is not safe for a production environement! Use this code at your own risk!
