@@ -9,9 +9,22 @@
  * Source       :   https://github.com/LouisRichard/blog
  */
 
+ require "controler/controler.php";
  session_start();
 
  if(!isset($_GET['page'])){
-    require_once "controler/controler.php";
     home();
  }
+ else {
+
+   $page = $_GET['page'];
+
+   switch($page){
+   case 'home' :
+      home();
+      break;
+   default :
+      home();
+      break;
+   }
+}

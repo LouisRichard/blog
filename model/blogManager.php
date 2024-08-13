@@ -16,9 +16,7 @@
   * @return array X amount of blog posts titles and URL 
   */
  function getLatest($amount=20){
-    //The DB isn't there yet. Just POC
-    $query = "SELECT 'title', 'id' FROM 'posts' LIMIT ".$amount;
-
+    $query = "SELECT title, id, date FROM posts LIMIT ".$amount;
     require_once "model/dbconnector.php";
     return executeQuerySelect($query);
  }

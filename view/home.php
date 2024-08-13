@@ -11,5 +11,20 @@
     <body>
         <h1>My rants and ongoing projects</h1>
         <h6>I'm just very angry I guess</h6>
+        <table class="table table-dark">
+            <th> Title </th>
+            <th> Date published </th>
+        <?php foreach($latest as $post){ ?>
+            <tr>
+                <td><a href="index.php?page=post&id=<?=$post[1]?>"><?=$post[0]?></a></td>
+                <td><?=$post[2]?></td>
+            </tr>
+        <?php } ?>
+        </table>
+
+        <footer>
+            <p>Copyright(c) Louis Richard <a href="https://richard486.ch">@Richard486</a> - 2024</p>
+            <p>Sources for this website are privates. Please abbide by the BSD-3 License</p>
+        </footer>
     </body>
 </html>
