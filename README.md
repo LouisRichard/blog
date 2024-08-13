@@ -29,4 +29,4 @@ INSERT INTO blog.posts (title, mdfile, date) VALUES ('Title of the article', 'fi
 ## Security notice
 I've done jack to make sure everything is secure.  
 The website as it is now is very vulnerable to SQL injection because I didn't bother making checks while I'm still building it!  
-It is not safe for a production environement! Use this code at your own risk!
+It is not safe for a production environement! Use this code at your own risk! (I am very reckless and stupid)
