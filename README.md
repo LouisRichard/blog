@@ -15,8 +15,17 @@ When opening an article, it'll read the file content and use Parsedown to conver
 
 I've made a quick and dirty style.css file just so it doesn't burn your retina while trying to read (dark mode > all)  
 
-To test it, edit model/dbconnector.php with your mysql login.  
-You can use the script DB/CreaDB.sql to create the database.  
+To test it, edit `model/dbconnector.php` with your mysql login.  
+```php
+    $sqlDriver = 'mysql';
+    $hostname = 'localhost';
+    $port = 3306;
+    $charset = 'utf8';
+    $dbName = 'blog';
+    $userName = 'root';
+    $userPwd = '';
+```
+You can use the script `DB/CreaDB.sql` to create the database.  
 
 Nothing is automated when it comes to publishing something.  
 I will just write it in Markdown, drop it in the post directory and manually add it to the database with the relevant informations.  
